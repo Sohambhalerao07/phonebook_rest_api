@@ -42,10 +42,8 @@ struct UpdateContact {
 
 #[tokio::main]
 async fn main() -> anyhow::Result<()> {
-    // Load environment variables
     dotenvy::dotenv().ok();
     
-    // Initialize database pool
     let database_url = std::env::var("DATABASE_URL")
         .expect("DATABASE_URL must be set in .env file");
     
@@ -54,7 +52,7 @@ async fn main() -> anyhow::Result<()> {
         .connect(&database_url)
         .await?;
     
-    // Run migrations
+
     sqlx::migrate!("./migrations")
         .run(&db_pool)
         .await?;
