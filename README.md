@@ -28,5 +28,3 @@ A high-performance REST API for managing phone contacts, built with Rust and Axu
 | PUT    | `/contacts/{id}`        | Update contact by ID                 |
 | GET    | `/contacts/search`      | Search contacts by phone number      |
 
-
-  "created
